@@ -19,13 +19,13 @@ pipeline {
         }
         stage('Build Docker image') {
             steps {
-                sh 'docker build -t mohanit999/tomcatProject1 .'
-                sh 'docker push mohanit999/tomcatProject1'
+                sh 'docker build -t mohanit999/tomcatproject1 .'
+                sh 'docker push mohanit999/tomcatproject1'
             }
         }
         stage('Deploy on Docker Container') {
             steps {
-                sh 'docker container run -dt --name JavaCal -p 9000:8080 mohanit999/tomcatProject1'
+                sh 'docker container run -dt --name JavaCal -p 9000:8080 mohanit999/tomcatproject1'
             }
         }
     }
